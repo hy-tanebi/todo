@@ -10,7 +10,7 @@ interface Todo {
   title: string;
   detail: string;
   status: "未着手" | "着手" | "完成";
-  createdAt: number; // タスク作成時のタイムスタンプ（数値型）
+  createdAt: number;
 }
 
 function App() {
@@ -44,7 +44,7 @@ function App() {
       title: todo,
       detail: detail,
       status: status,
-      createdAt: Date.now(), // 現在時刻をタイムスタンプとして保存
+      createdAt: Date.now(),
     };
 
     setTodos([...todos, newTodo]);
@@ -108,8 +108,8 @@ function App() {
 
       if (sortKey === "createdAt") {
         return sortOrder === "asc"
-          ? a.createdAt - b.createdAt // 昇順（古い順）
-          : b.createdAt - a.createdAt; // 降順（新しい順）
+          ? a.createdAt - b.createdAt
+          : b.createdAt - a.createdAt;
       }
 
       return 0;
